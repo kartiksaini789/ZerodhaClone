@@ -17,7 +17,7 @@ const app = express();
 
 app.use(cors({
   origin: [
-    "https://zerodha-frontend.onrender.com",
+    "https://zerodha-fronted.onrender.com",
     "https://zerodha-dashboard.onrender.com"
   ]
 }));
@@ -191,6 +191,9 @@ app.use(bodyParser.json());
 //   });
 //   res.send("Done!");
 // });
+app.get("/", (req, res) => {
+  res.send("Zerodha Backend Running 🚀");
+});
 
 app.get("/allHoldings", async (req, res) => {
   let allHoldings = await HoldingsModel.find({});
